@@ -5,7 +5,7 @@
     $pass = $_SESSION["pass"]; // Récupère la variable pass de la session
     
     if ($login == "" || $pass == "") {  // Vérifie qu le login et le pass sient remplis
-        header("location: /logout.php"); // Redirige vers le fomurlaire 
+        header("location: /formulaire.php"); // Redirige vers le fomurlaire 
         exit();
     }
 ?>

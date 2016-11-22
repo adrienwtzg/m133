@@ -10,7 +10,7 @@
     $MessageErreurLogin = "";
     $MessageErreurPass = "";
     
-    if ((!isset($login)) || (!isset($pass))) {
+    if (($login == "") || ($pass == "")) {
         $MessageErreurLogin = "";
         $MessageErreurPass = "";
     }

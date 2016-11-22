@@ -39,8 +39,7 @@
     </head>
     <body>
         <?php
-            echo $MessageErreurLogin;
-            echo $MessageErreurPass;
+           
         ?>
         <form action="#" method="POST">
             <table>
@@ -51,6 +50,11 @@
                     <td>
                         <input type="text" name="login" value="<?php echo $login ?>"/>
                     </td>
+                    <td>
+                        <?php
+                            echo "<a style='color: red'>".$MessageErreurLogin."</a>";
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -58,6 +62,11 @@
                     </td>
                     <td>
                         <input type="password" name="pass"/>
+                    </td>
+                    <td>
+                        <?php
+                            echo "<a style='color: red'>".$MessageErreurPass."</a>";
+                        ?>
                     </td>
                 </tr>
                 <tr>

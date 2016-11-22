@@ -17,7 +17,7 @@
     else
     {
        if (($login == "admin") && ($pass == $passAdmin)) {  // Condition de mot de passe
-            header("Location: /Acceuil.php"); // Redirige vers la page d'acceuil de l'admin
+            header("Location: /acceuil.php"); // Redirige vers la page d'acceuil de l'admin
             exit();
         }
         elseif ($login != "admin")

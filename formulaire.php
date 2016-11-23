@@ -6,13 +6,16 @@
     $pass = (isset($_REQUEST["pass"])?sha1($_REQUEST["pass"]):""); // Stockage de la réponse de l'utilisateur pour le pass
     $_SESSION["login"] = $login; // Assignation du login dans la session
     $_SESSION["pass"] = $pass; // Assignation du login dans la session
+    $Compt = 0;
     
     $MessageErreurLogin = "";
     $MessageErreurPass = "";
+    $AlertTentative = "";
     
     if (($login == "") || ($pass == "")) {
         $MessageErreurLogin = "";
         $MessageErreurPass = "";
+        $AlertTentative = "";
     }
     else
     {
@@ -23,11 +26,17 @@
         elseif ($login != "admin")
         {
             $MessageErreurLogin = "Login incorrect !";
+            $Compt++;
         }
         elseif (($login == "admin") && ($pass != $passAdmin))
         {
             $MessageErreurPass = "Mot de passe incorrect !";
-        } 
+            $Compt++;
+        }
+        
+        if ($Compt >= 3) {
+            $AlertTentative = "Vous avez eu 3 tentative !";
+        }
     } 
 ?>
 <!DOCTYPE html>
@@ -38,9 +47,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <?php
-           
-        ?>
         <form action="#" method="POST">
             <table>
                 <tr>
@@ -73,7 +79,18 @@
                     <td></td>
                     <td>
                         <input type="submit" value="Login" name="btnSubmit"/>
-                    </td>    
+                    </td>
+                    <td>
+                        <?php 
+                            echo "<a style='color: red'>".$AlertTentative."</a>";
+                        ?>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!--<a href="inscription.php"><input style="position: absolute; top: 63px; left: 140px;" type="submit" value="Subscribe" /></a>-->
+                    </td>
                 </tr>
             </table>
         </form>

@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+$LIGNES = (isset($_REQUEST["Lignes"]) ? $_REQUEST["Lignes"] : "0");
+$COLONNES = (isset($_REQUEST["Colonnes"]) ? $_REQUEST["Colonnes"] : "0");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +20,7 @@
                 background-color: #AAAAAA;
                 color: #FFFFFF;
             }
-            td{
+            td, th{
                 text-align: center;
                 width: 25px;
                 height: 25px;
@@ -30,15 +33,12 @@
     <body>
         <div>
             <form>
-                Lignes : <input type="number" name="Lignes" value=""/>
-                Colonnes : <input type="number" name="Colonnes" value=""/>
+                Lignes : <input type="number" name="Lignes" value="<?php echo $LIGNES ?>"/>
+                Colonnes : <input type="number" name="Colonnes" value="<?php echo $COLONNES ?>"/>
                 <input type="submit" value="Construire" name="btnSubmit"/>
                 </br>
             </form>
             <?php
-            $LIGNES = (isset($_REQUEST["Lignes"]) ? $_REQUEST["Lignes"] : "0");
-            $COLONNES = (isset($_REQUEST["Colonnes"]) ? $_REQUEST["Colonnes"] : "0");
-
             define("LIGNES", $LIGNES);
             define("COLONNES", $COLONNES);
 
@@ -48,7 +48,11 @@
                 for ($l = 0; $l < LIGNES; $l++) {
                     echo "\n\t\t<tr>";
                     for ($i = 0; $i < COLONNES; $i++) {
-                        echo "\n\t\t\t<td>" . ($l * COLONNES + $i + 1) . "</td>";
+                        if ($l == 0) {
+                            echo "\n\t\t\t<th>" . ($l * COLONNES + $i + 1) . "</th>";
+                        } else {
+                            echo "\n\t\t\t<td>" . ($l * COLONNES + $i + 1) . "</td>";
+                        }
                     }
                     echo "\n\t\t</tr>";
                 }

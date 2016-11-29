@@ -40,15 +40,9 @@ $TH = $_REQUEST["TH"];
     <body>
         <div>
             <form>
-<<<<<<< HEAD
-                Lignes : <input type="number" name="Lignes" value="<?php echo $LIGNES ?>"/>
-                Colonnes : <input type="number" name="Colonnes" value="<?php echo $COLONNES ?>"/>
-                Couleur du tableau : 
-=======
                 <legend style="margin: 10px 0px 10px 0px">Lignes : </legend><input type="number" name="Lignes" value="<?php echo $LIGNES ?>"/>
                 <legend style="margin: 10px 0px 10px 0px">Colonnes : </legend><input type="number" name="Colonnes" value="<?php echo $COLONNES ?>"/><br>
                 1<sup>ère</sup> ligne surligné : <input type="checkbox" name="TH" value="true" style="margin: 10px 0px 10px 0px"/><br> 
->>>>>>> Adrien_Branche
                 <input type="submit" value="Construire" name="btnSubmit"/>
                 </br>
             </form>

@@ -10,6 +10,7 @@
                 border-color: #000000;
                 border-width: 1px;
                 color: #000000;
+                border-collapse: collapse;
             }
             th{
                 background-color: #AAAAAA;

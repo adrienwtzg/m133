@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Tableau en PHP</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table{
+                border-style: solid;
+                border-color: #000000;
+                border-width: 1px;
+                color: #000000;
+            }
+            th{
+                background-color: #AAAAAA;
+                color: #FFFFFF;
+            }
+        </style>
     </head>
     <body>
+        <div>
         <?php
             define("LIGNES", 3);
             define("COLLONES", 4);
@@ -21,7 +34,6 @@
                 }
                 echo "\n\t\t</tr>";
             }
-            
             echo "\n\t</table>";
         ?>
         <div>

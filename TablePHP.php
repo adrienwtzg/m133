@@ -16,6 +16,11 @@
                 background-color: #AAAAAA;
                 color: #FFFFFF;
             }
+            td{
+                text-align: center;
+                width: 25px;
+                height: 25px;
+            }
         </style>
     </head>
     <body>

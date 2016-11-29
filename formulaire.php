@@ -54,7 +54,7 @@
                         Login :
                     </td>
                     <td>
-                        <input type="text" name="login" value="<?php echo $login ?>"/>
+                        <input type="email" name="login" required="required" value="<?php echo $login ?>"/>
                     </td>
                     <td>
                         <?php
@@ -67,7 +67,7 @@
                         Password :
                     </td>
                     <td>
-                        <input type="password" name="pass"/>
+                        <input type="password" name="pass" required="required"/>
                     </td>
                     <td>
                         <?php

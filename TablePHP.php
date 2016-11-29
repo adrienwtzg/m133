@@ -1,3 +1,7 @@
+<?php
+    $LIGNES = $_REQUEST["Lignes"];
+    $COLONNES = $_REQUEST["Colonnes"];
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,6 +29,9 @@
     </head>
     <body>
         <div>
+            Lignes : <input type="number" name="Lignes" value=""/>
+            Colonnes : <input type="number" name="Colonnes" value=""/>
+            <input type="submit" value="Construction Table" name="btnSubmit"/>
         <?php
             define("LIGNES", 3);
             define("COLLONES", 4);

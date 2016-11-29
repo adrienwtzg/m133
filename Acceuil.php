@@ -17,11 +17,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <pre>
-            <?php
-                echo "<h1>Bienvenue " . $login . " !</h1>";
-            ?>
-        </pre>
         <a href="logout.php"><input type="submit" value="Log Out" /></a>
+        <?php
+            echo "<h1>Bienvenue " . $login . " !</h1>";
+        ?>
     </body>
 </html>

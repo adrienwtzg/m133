@@ -24,7 +24,7 @@ $TH = $_REQUEST["TH"];
                 background-color: #AAAAAA;
                 color: #FFFFFF;
             }
-            td{
+            td, th{
                 text-align: center;
                 width: 25px;
                 height: 25px;

@@ -10,10 +10,16 @@
                 border-color: #000000;
                 border-width: 1px;
                 color: #000000;
+                border-collapse: collapse;
             }
             th{
                 background-color: #AAAAAA;
                 color: #FFFFFF;
+            }
+            td{
+                text-align: center;
+                width: 25px;
+                height: 25px;
             }
         </style>
     </head>
@@ -23,7 +29,7 @@
             define("LIGNES", 3);
             define("COLLONES", 4);
             
-            echo "\n\t<table>";
+            echo "\n\t<table border='1px, black, solid' borderCollapse='collapse'>";
             
             for($l = 0; $l < LIGNES; $l++)
             {

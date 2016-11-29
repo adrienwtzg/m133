@@ -1,6 +1,13 @@
 <?php
+<<<<<<< HEAD
 $LIGNES = (isset($_REQUEST["Lignes"]) ? $_REQUEST["Lignes"] : "0");
 $COLONNES = (isset($_REQUEST["Colonnes"]) ? $_REQUEST["Colonnes"] : "0");
+=======
+    require("Library.inc.php");
+
+    $LIGNES = (isset($_REQUEST["Lignes"]) ? $_REQUEST["Lignes"] : "0");
+    $COLONNES = (isset($_REQUEST["Colonnes"]) ? $_REQUEST["Colonnes"] : "0");
+>>>>>>> Adrien_Branche
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,12 +40,19 @@ $COLONNES = (isset($_REQUEST["Colonnes"]) ? $_REQUEST["Colonnes"] : "0");
     <body>
         <div>
             <form>
+<<<<<<< HEAD
                 Lignes : <input type="number" name="Lignes" value="<?php echo $LIGNES ?>"/>
                 Colonnes : <input type="number" name="Colonnes" value="<?php echo $COLONNES ?>"/>
+=======
+                Lignes : <input type="number" name="Lignes" value="<?php echo $LIGNES?>"/>
+                Colonnes : <input type="number" name="Colonnes" value="<?php echo $COLONNES ?>"/>
+                Couleur du tableau : 
+>>>>>>> Adrien_Branche
                 <input type="submit" value="Construire" name="btnSubmit"/>
                 </br>
             </form>
             <?php
+<<<<<<< HEAD
             define("LIGNES", $LIGNES);
             define("COLONNES", $COLONNES);
 
@@ -58,6 +72,9 @@ $COLONNES = (isset($_REQUEST["Colonnes"]) ? $_REQUEST["Colonnes"] : "0");
                 }
                 echo "\n\t</table>";
             }
+=======
+                AfficheTableau($LIGNES, $COLONNES);
+>>>>>>> Adrien_Branche
             ?>
     </body>
 </html>

@@ -1,7 +1,4 @@
-<?php
-    $LIGNES = $_REQUEST["Lignes"];
-    $COLONNES = $_REQUEST["Colonnes"];
-?>
+<?php ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,31 +22,38 @@
                 width: 25px;
                 height: 25px;
             }
+            form{
+                margin-bottom: 20px;
+            }
         </style>
     </head>
     <body>
         <div>
-            Lignes : <input type="number" name="Lignes" value=""/>
-            Colonnes : <input type="number" name="Colonnes" value=""/>
-            <input type="submit" value="Construction Table" name="btnSubmit"/>
-        <?php
-            define("LIGNES", 3);
-            define("COLLONES", 4);
-            
-            echo "\n\t<table border='1px, black, solid' borderCollapse='collapse'>";
-            
-            for($l = 0; $l < LIGNES; $l++)
-            {
-                echo "\n\t\t<tr>";
-                for($i = 0; $i < COLLONES; $i++)
-                {
-                    echo "\n\t\t\t<td>" . ($l * COLLONES + $i + 1) . "</td>";
+            <form>
+                Lignes : <input type="number" name="Lignes" value=""/>
+                Colonnes : <input type="number" name="Colonnes" value=""/>
+                <input type="submit" value="Construire" name="btnSubmit"/>
+                </br>
+            </form>
+            <?php
+            $LIGNES = (isset($_REQUEST["Lignes"]) ? $_REQUEST["Lignes"] : "0");
+            $COLONNES = (isset($_REQUEST["Colonnes"]) ? $_REQUEST["Colonnes"] : "0");
+
+            define("LIGNES", $LIGNES);
+            define("COLONNES", $COLONNES);
+
+            if (($LIGNES > 0) && ($COLONNES > 0)) {
+                echo "\n\t<table border='1px, black, solid' borderCollapse='collapse'>";
+
+                for ($l = 0; $l < LIGNES; $l++) {
+                    echo "\n\t\t<tr>";
+                    for ($i = 0; $i < COLONNES; $i++) {
+                        echo "\n\t\t\t<td>" . ($l * COLONNES + $i + 1) . "</td>";
+                    }
+                    echo "\n\t\t</tr>";
                 }
-                echo "\n\t\t</tr>";
+                echo "\n\t</table>";
             }
-            echo "\n\t</table>";
-        ?>
-        <div>
-        </div>
+            ?>
     </body>
 </html>

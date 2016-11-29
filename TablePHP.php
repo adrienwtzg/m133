@@ -7,16 +7,22 @@
     </head>
     <body>
         <?php
-            $LIGNES = 3;
-            $COLLONES = 4;
+            define("LIGNES", 3);
+            define("COLLONES", 4);
             
-            for($l = 0; $l < $LIGNES; $l++)
+            echo "\n\t<table>";
+            
+            for($l = 0; $l < LIGNES; $l++)
             {
-                for($l = 0; $l < $COLLONES; $l++)
+                echo "\n\t\t<tr>";
+                for($i = 0; $i < COLLONES; $i++)
                 {
-                    
+                    echo "\n\t\t\t<td>" . ($l * COLLONES + $i + 1) . "</td>";
                 }
+                echo "\n\t\t</tr>";
             }
+            
+            echo "\n\t</table>";
         ?>
         <div>
         </div>

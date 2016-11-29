@@ -7,7 +7,18 @@
     </head>
     <body>
         <div>
+            <?php
+            $LIGNES = 3;
+            $COLLONES = 4;
             
+            for($l = 0; $l < $LIGNES; $l++)
+            {
+                for($l = 0; $l < $COLLONES; $l++)
+                {
+                    
+                }
+            }
+            ?>
         </div>
     </body>
 </html>

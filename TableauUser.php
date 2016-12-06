@@ -2,9 +2,11 @@
     $user["admin"] = sha1("Super2012"); //Tableau des users
     $user["prof"] = sha1("Secret");
     $user["eleve"] = sha1("Super");
+    $user["eleve2"] = sha1("Super2008");
+    $user["lucas"] = sha1("Salut");
     
-    $TriUser = isset($_GET["TriUser"]) ? $_GET["TriUser"] : false;
-    $TriPass = isset($_GET["TriPass"]) ? $_GET["TriPass"] : false;
+    $TriUser = isset($_GET["TriUser"]) ? $_GET["TriUser"]: NULL;
+    $TriPass = isset($_GET["TriPass"]) ? $_GET["TriPass"]: NULL;
     
     
 ?>
@@ -17,11 +19,20 @@
     </head>
     <body>
         <?php
-        $NextTriUser ? $TriUser = false : $TriUser = true;
-        $NextTriPass ? $TriPass = false : $TriPass = true;
-        $TriUser ? ksort($user) : krsort($user);
-        $TriPass ? asort($user) : arsort($user);
-        echo "<table><tr><a href='TableauUser.php?TriUser=$NextTriUser&TriPass=$TriPass'><th>User</th></a><a href='TableauUser.php?TriUser=$TriUser&TriPass=$NextTriPass'><th>Password</th></a></tr>";
+        (!boolval($TriUser))?$NextTriUser = 1:$NextTriUser = 0;
+        
+        (!boolval($TriPass))?$NextTriPass = 1:$NextTriPass = 0;
+        
+        if($TriUser === NULL){
+            boolval($TriPass) ? asort($user) : arsort($user);
+        }
+        elseif ($TriPass === NULL) {
+            boolval($TriUser) ? ksort($user) : krsort($user);
+        }
+        
+        
+        
+        echo "<table><tr><th><a href='TableauUser.php?TriUser=$NextTriUser'>User</a></th><th><a href='TableauUser.php?TriPass=$NextTriPass'>Password</a></th></tr>";
             foreach ($user as $key => $value) {
                 echo "<tr><td>$key</td><td>$value</td></tr>";
             }

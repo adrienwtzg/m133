@@ -5,8 +5,8 @@
     $user["eleve2"] = sha1("Super2008");
     $user["lucas"] = sha1("Salut");
     
-    $TriUser = isset($_GET["TriUser"]) ? $_GET["TriUser"]: 0;
-    $TriPass = isset($_GET["TriPass"]) ? $_GET["TriPass"]: 0;
+    $TriUser = isset($_GET["TriUser"]) ? $_GET["TriUser"]: NULL;
+    $TriPass = isset($_GET["TriPass"]) ? $_GET["TriPass"]: NULL;
     
     
 ?>
@@ -23,11 +23,16 @@
         
         (!boolval($TriPass))?$NextTriPass = 1:$NextTriPass = 0;
         
+        if($TriUser === NULL){
+            boolval($TriPass) ? asort($user) : arsort($user);
+        }
+        elseif ($TriPass === NULL) {
+            boolval($TriUser) ? ksort($user) : krsort($user);
+        }
         
-        boolval($TriUser) ? ksort($user) : krsort($user);
-        boolval($TriPass) ? asort($user) : arsort($user);
         
-        echo "<table><tr><th><a href='TableauUser.php?TriUser=$NextTriUser&TriPass=$TriPass'>User</a></th><th><a href='TableauUser.php?TriUser=$TriUser&TriPass=$NextTriPass'>Password</a></th></tr>";
+        
+        echo "<table><tr><th><a href='TableauUser.php?TriUser=$NextTriUser'>User</a></th><th><a href='TableauUser.php?TriPass=$NextTriPass'>Password</a></th></tr>";
             foreach ($user as $key => $value) {
                 echo "<tr><td>$key</td><td>$value</td></tr>";
             }

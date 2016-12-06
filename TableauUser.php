@@ -1,5 +1,5 @@
 <?php
-    $user["admin"] = sah1("Super2012");
+    $user["admin"] = sah1("Super2012"); //Tableau des users
     $user["prof"] = sah1("Secret");
     $user["eleve"] = sah1("Super");
 ?>

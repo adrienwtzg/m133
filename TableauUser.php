@@ -19,8 +19,8 @@
         <?php
         $NextTriUser ? $TriUser = false : $TriUser = true;
         $NextTriPass ? $TriPass = false : $TriPass = true;
-        $TriUser ? $user = ksort($user) : $user = krsort($user);
-        $TriPass ? $user = asort($user) : $user = arsort($user);
+        $TriUser ? ksort($user) : krsort($user);
+        $TriPass ? asort($user) : arsort($user);
         echo "<table><tr><a href='TableauUser.php?TriUser=$NextTriUser&TriPass=$TriPass'><th>User</th></a><a href='TableauUser.php?TriUser=$TriUser&TriPass=$NextTriPass'><th>Password</th></a></tr>";
             foreach ($user as $key => $value) {
                 echo "<tr><td>$key</td><td>$value</td></tr>";
